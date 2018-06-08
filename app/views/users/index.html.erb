@@ -14,7 +14,7 @@
   <tbody>
     <% if @users.empty? %>
     <tr>
-      <td colspan="5" style="text-align: center"><h3>Nenum usuário encontrado.</h3></td>
+      <td colspan="5" style="text-align: center"><h3>Nenhum usuário encontrado.</h3></td>
     </tr>
     <% end %>
     <% @users.each do |user| %>
@@ -36,3 +36,4 @@
 <% end %>
 
 <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn waves-effect waves-light z-depth-4' %>
+<%= link_to 'Voltar', menu_index_path, class: 'btn waves-effect waves-light z-depth-4' %>

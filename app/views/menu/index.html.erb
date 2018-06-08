@@ -1,5 +1,31 @@
-<div class="row">
-  <div class="col-xs-12">
-    
+<div>
+  <div class="card horizontal">
+
+    <div class="card small">
+      <div class="card-content">
+        <p>Aqui você pode visualziar a lista de usuários</p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Usuários', users_path, class: 'btn waves-effect waves-light' %>
+      </div>
+    </div>
+
+    <div class="card small">
+      <div class="card-content">
+        <p>Visualize sua área de produtos</p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Produtos', products_path, class: 'btn waves-effect waves-light' %>
+      </div>
+    </div>
+
+    <div class="card small">
+      <div class="card-content">
+        <p>Visualize sua área de serviços</p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Serviços', my_tasks_path, class: 'btn waves-effect waves-light' %>
+      </div>
+    </div>
   </div>
 </div>

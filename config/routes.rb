@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :products
+  resources :my_tasks
   resources :menu, only: [:index]
 end

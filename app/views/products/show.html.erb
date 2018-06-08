@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div class="content">
+  <ul class="collection">
+    <li class="collection-item">Nome: <%= @product.nome %></li>
+    <li class="collection-item">Valor: <%= @product.valor %></li>
+  </ul>
+
+  <%= link_to 'Editar', edit_product_path(@product), class: 'btn waves-effect waves-light z-depth-4' %> |
+  <%= link_to 'Voltar', products_path, class: 'btn waves-effect waves-light z-depth-4' %>
+</div>

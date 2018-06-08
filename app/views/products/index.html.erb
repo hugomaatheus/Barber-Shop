@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Produtos</h1>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @products.empty? %>
+    <tr>
+      <td colspan="5" style="text-align: center"><h3>Ops, parece que o estoque está vazio.</h3></td>
+    </tr>
+    <% end %>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.nome %></td>
+        <td><%= product.valor %></td>
+        <td><%= link_to 'Detalhes', product, class: 'btn waves-effect waves-light z-depth-4' %></td>
+        <td><%= link_to 'Editar', edit_product_path(product), class: 'btn waves-effect waves-light z-depth-4' %></td>
+        <td><%= link_to 'Deletar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn waves-effect waves-light z-depth-4' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_product_path, class: 'btn-floating btn-large waves-effect waves-circle waves-light z-depth-4' do %>
+  <i class="material-icons">add</i>
+<% end %>
+
+<%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn waves-effect waves-light z-depth-4' %>
+<%= link_to 'Voltar', menu_index_path, class: 'btn waves-effect waves-light z-depth-4' %>
