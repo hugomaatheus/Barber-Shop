@@ -24,6 +24,6 @@ Rails.application.routes.draw do
     get 'login', to: 'users/sessions#new'
   end
 
-
   resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :menu, only: [:index]
 end
