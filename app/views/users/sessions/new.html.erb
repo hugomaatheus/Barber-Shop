@@ -1,0 +1,26 @@
+
+<div class="content">
+  <h1>Barbearia Arts Black</h1>
+  <h3>Bem vindo! Por favor, autentique-se.</h3>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="input-field">
+      <%= f.email_field :email, class: 'validate', autofocus: true, autocomplete: "email" %>
+      <label for="email">E-mail</label>
+    </div>
+
+    <div class="input-field">
+      <%= f.password_field :password, class: 'validate', autofocus: true,autocomplete: "off" %>
+      <label for="password">Senha</label>
+    </div>
+
+    <div class="row">
+      <div>
+        <button type="submit" class="btn btn-large waves-effect waves-light z-depth-4">
+          Log in
+          <i class="material-icons right z-depth-4">send</i>
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>

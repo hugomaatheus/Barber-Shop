@@ -1,0 +1,33 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <%= form.label :name, "Nome" %>
+    <%= form.text_field :name, id: :user_name, class: 'validate' %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :email, "E-mail" %>
+    <%= form.text_field :email, id: :user_email, class: 'validate' %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :password, "Password" %>
+    <%= form.text_field :password, id: :user_password %>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn waves-effect waves-light">Salvar</button>
+    <%= link_to 'Voltar', users_path, class: 'btn waves-effect waves-light' %>
+  </div>
+<% end %>

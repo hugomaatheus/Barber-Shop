@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="content">
+    <ul class="collection">
+      <li><strong>Nome:</strong></li>
+      <li class="collection-item"><%= @user.name %></li>
+      <li><strong>E-mail:</strong></li>
+      <li class="collection-item"><%= @user.email %></li>
+    </ul>
+
+
+    <%= link_to 'Editar', edit_user_path(@user), class: 'btn waves-effect waves-light z-depth-4' %> |
+    <%= link_to 'Voltar', users_path, class: 'btn waves-effect waves-light z-depth-4' %>
+</div>
