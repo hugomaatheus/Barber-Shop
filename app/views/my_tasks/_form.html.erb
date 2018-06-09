@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :task_name %>
-    <%= form.text_field :task_name, id: :my_task_task_name %>
+  <div class="input-field">
+    <%= form.label :task_name, "Tipo" %>
+    <%= form.text_field :task_name, id: :my_task_task_name, class: 'validate' %>
   </div>
 
-  <div class="field">
-    <%= form.label :valor %>
-    <%= form.text_field :valor, id: :my_task_valor %>
+  <div class="input-field">
+    <%= form.label :valor, "Preço" %>
+    <%= form.text_field :valor, id: :my_task_valor, class: 'validate' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <button type="submit" class="btn waves-effect waves-light z-depth-4">Salvar</button>
+    <%= link_to 'Voltar', my_tasks_path, class: 'btn waves-effect waves-light z-depth-4' %>
   </div>
 <% end %>

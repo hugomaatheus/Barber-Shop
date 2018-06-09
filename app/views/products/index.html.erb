@@ -23,7 +23,7 @@
         <td><%= product.valor %></td>
         <td><%= link_to 'Detalhes', product, class: 'btn waves-effect waves-light z-depth-4' %></td>
         <td><%= link_to 'Editar', edit_product_path(product), class: 'btn waves-effect waves-light z-depth-4' %></td>
-        <td><%= link_to 'Deletar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn waves-effect waves-light z-depth-4' %></td>
+        <td><%= link_to 'Deletar', product, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn waves-effect waves-red z-depth-4' %></td>
       </tr>
     <% end %>
   </tbody>

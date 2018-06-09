@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Task name:</strong>
-  <%= @my_task.task_name %>
-</p>
+<div class="content">
+  <ul class="collection">
+    <li class="collection-item">Nome: <%= @my_task.task_name %></li>
+    <li class="collection-item">Valor: <%= @my_task.valor %></li>
+  </ul>
 
-<p>
-  <strong>Valor:</strong>
-  <%= @my_task.valor %>
-</p>
-
-<%= link_to 'Edit', edit_my_task_path(@my_task) %> |
-<%= link_to 'Back', my_tasks_path %>
+  <%= link_to 'Editar', edit_my_task_path(@my_task), class: 'btn waves-effect waves-light z-depth-4' %> |
+  <%= link_to 'Voltar', my_tasks_path, class: 'btn waves-effect waves-light z-depth-4' %>
+</div>

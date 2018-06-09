@@ -1,24 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>My Tasks</h1>
+<h1>Meus Serviços</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Task name</th>
+      <th>Tipo</th>
       <th>Valor</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+    <% if @my_tasks.empty? %>
+    <tr>
+      <td colspan="5" style="text-align: center"><h3>Nenhum serviço feito.</h3></td>
+    </tr>
+    <% end %>
     <% @my_tasks.each do |my_task| %>
       <tr>
         <td><%= my_task.task_name %></td>
         <td><%= my_task.valor %></td>
-        <td><%= link_to 'Show', my_task %></td>
-        <td><%= link_to 'Edit', edit_my_task_path(my_task) %></td>
-        <td><%= link_to 'Destroy', my_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', my_task, class: 'btn waves-effect waves-light z-depth-4' %></td>
+        <td><%= link_to 'Editar', edit_my_task_path(my_task), class: 'btn waves-effect waves-light z-depth-4' %></td>
+        <td><%= link_to 'Deletar', my_task, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn waves-effect waves-red z-depth-4' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +31,9 @@
 
 <br>
 
-<%= link_to 'New My Task', new_my_task_path %>
+<%= link_to  new_my_task_path, class: 'btn-floating btn-large waves-effect waves-circle waves-light z-depth-4' do %>
+  <i class="material-icons">add</i>
+<% end %>
+
+<%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn waves-effect waves-light z-depth-4' %>
+<%= link_to 'Voltar', menu_index_path, class: 'btn waves-effect waves-light z-depth-4' %>
